@@ -1,0 +1,5 @@
+#pragma once
+
+#define IDC_RB_APPBUTTON 0x20001
+
+#define IDC_RB_BTN_IMPORTFILE 0x21001

@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "MainWindow.h"
 
 IMPLEMENT_DYNCREATE(Application, CWinAppEx)
 
@@ -24,6 +25,10 @@ BOOL Application::InitInstance()
 
     HRESULT hret=CoInitialize(NULL);
 
+    MainWindow* pWnd = new MainWindow();
+    pWnd->Create(NULL, APPLICATION_NAME);
+    pWnd->ShowWindow(SW_SHOW);
+    m_pMainWnd = pWnd;
     return TRUE;
 }
 
@@ -33,6 +38,6 @@ BOOL Application::ExitInstance()
     {
         return false;
     }
-
+    
     return TRUE;
 }
